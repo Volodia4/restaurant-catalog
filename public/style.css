@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url("images/MainBG.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: rgb(255, 255, 255);
+    position: relative;
+    width: 100%;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(60, 40, 20, 0.9);
+    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(244, 194, 108);
+    font-size: 22px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: rgb(255, 221, 153);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: rgba(60, 40, 20, 0.95);
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: rgb(244, 194, 108);
+    font-size: 18px;
+}
+
+.dropdown-menu li:hover {
+    background: rgb(80, 50, 30);
+}
+
+header, .hero {
+    transition: opacity 0.5s ease;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.hero-content {
+    background: rgba(60, 40, 20, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: rgb(255, 180, 51);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: rgb(255, 240, 214);
+    margin-bottom: 20px;
+}
+
+.start-btn {
+    background: rgb(255, 180, 51);
+    color: rgb(67, 40, 24);
+    padding: 14px 28px;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: rgb(255, 221, 153);
+}
+
+#filter-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(90, 50, 20);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+#filter-panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filter-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter {
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: rgb(255, 200, 80);
+    border: none;
+    border-radius: 5px;
+    color: rgb(50, 30, 10);
+}
+
+.filter:hover {
+    background-color: rgb(255, 180, 60);
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: rgb(255, 180, 60);
+    border: none;
+    border-radius: 5px;
+    color: rgb(50, 30, 10);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(255, 160, 40);
+}
+
+#restaurants-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    gap: 50px;
+    padding: 50px;
+    margin-top: -680px;
+    max-height: none;
+}
+
+#restaurants-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.restaurant-card {
+    cursor: pointer;
+    background-color: rgb(255, 242, 204);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.restaurant-card:hover {
+    background-color: rgb(255, 235, 179);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.restaurant-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 4px solid rgb(224, 215, 185);
+}
+
+.restaurant-info {
+    padding: 20px;
+    background-color: rgb(255, 245, 219);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: color 0.3s ease;
+}
+
+.restaurant-info:hover {
+    background-color: rgb(255, 241, 204);
+}
+
+.restaurant-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(51, 51, 51);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.restaurant-info p {
+    font-size: 1rem;
+    color: rgb(102, 102, 102);
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+.restaurant-card:hover .restaurant-info h3,
+.restaurant-card:hover .restaurant-info p {
+    color: rgb(97, 67, 18);
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

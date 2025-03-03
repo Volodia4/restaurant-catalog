@@ -1,0 +1,15 @@
+# Залежності Node.js
+node_modules/
+
+# Локальні файли Firebase (не потрібні для контролю версій)
+.firebase/
+
+# Налаштування IDE (WebStorm, IntelliJ)
+.idea/
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# Лог-файли
+*.log

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог ресторанів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">🍽️ FoodFinder</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li class="dropdown">
+                <a href="#">Каталог</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Італійська кухня</a></li>
+                    <li><a href="#">Японська кухня</a></li>
+                    <li><a href="#">Фастфуд</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Ласкаво просимо до FoodFinder</h1>
+        <p>Знайди найкращі ресторани у своєму місті! 😋</p>
+        <button id="start-btn" class="start-btn">Let's go!</button>
+    </div>
+</section>
+
+<div id="filter-panel" class="hidden">
+    <div class="filter-container">
+        <button id="home-btn" class="btn">Головна</button>
+        <label for="cuisine-select">Вибір кухні:</label>
+        <select id="cuisine-select" class="filter">
+            <option value="all">Усі типи кухні</option>
+            <option value="authors">Авторська</option>
+            <option value="american">Американська</option>
+            <option value="armenian">Арменійська</option>
+            <option value="asian">Азійська</option>
+            <option value="azerbaijani">Азербайджанська</option>
+            <option value="bar">Бар</option>
+            <option value="caucasian">Кавказька</option>
+            <option value="chinese">Китайська</option>
+            <option value="european">Європейська</option>
+            <option value="french">Французька</option>
+            <option value="fusion">Ф'южн</option>
+            <option value="german">Німецька</option>
+            <option value="greek">Грецька</option>
+            <option value="hungarian">Угорська</option>
+            <option value="indian">Хінді</option>
+            <option value="italian">Італійська</option>
+            <option value="japanese">Японська</option>
+            <option value="latin">Латинська</option>
+            <option value="lebanese">Ліванська</option>
+            <option value="mexican">Мексиканська</option>
+            <option value="moroccan">Марокканська</option>
+            <option value="polish">Польська</option>
+            <option value="pub">Паб</option>
+            <option value="russian">Російська</option>
+            <option value="seafood">Морепродукти</option>
+            <option value="south-african">Південноафриканська</option>
+            <option value="south-american">Південноамериканська</option>
+            <option value="spanish">Іспанська</option>
+            <option value="turkish">Турецька</option>
+            <option value="ukrainian">Українська</option>
+        </select>
+        <label for="regions-select">Вибір регіону:</label>
+        <select id="regions-select" class="filter">
+            <option value="all">Усі регіони</option>
+            <option value="сrimea">Автономна Республіка Крим</option>
+            <option value="vinnytsia">Вінницька область</option>
+            <option value="volyn">Волинська область</option>
+            <option value="dnipropetrovsk">Дніпропетровська область</option>
+            <option value="donetsk">Донецька область</option>
+            <option value="zhytomyr">Житомирська область</option>
+            <option value="zakarpattia">Закарпатська область</option>
+            <option value="zaporizhzhia">Запорізька область</option>
+            <option value="ivanofrankivsk">Івано-Франківська область</option>
+            <option value="kyiv">Київська область</option>
+            <option value="kirovohrad">Кіровоградська область</option>
+            <option value="luhansk">Луганська область</option>
+            <option value="lviv">Львівська область</option>
+            <option value="mykolaiv">Миколаївська область</option>
+            <option value="odesa">Одеська область</option>
+            <option value="poltava">Полтавська область</option>
+            <option value="rivne">Рівненська область</option>
+            <option value="sumy">Сумська область</option>
+            <option value="ternopil">Тернопільська область</option>
+            <option value="kharkiv">Харківська область</option>
+            <option value="kherson">Херсонська область</option>
+            <option value="khmelnytskyi">Хмельницька область</option>
+            <option value="cherkasy">Черкаська область</option>
+            <option value="chernivtsi">Чернівецька область</option>
+            <option value="chernihiv">Чернігівська область</option>
+        </select>
+    </div>
+</div>
+
+<div id="restaurants-container" class="hidden">
+    <div class="restaurant-card">
+        <img src="images/NotFound.png" alt="Restaurant Image">
+        <div class="restaurant-info">
+            <h3>Назва ресторану</h3>
+            <p>Опис ресторану...</p>
+            <a href="#" class="btn">Детальніше</a>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+    import { getRestaurants } from './index.js';
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDcIz_V7PHfswHYgMYxtLuOgeytzKtRgjs",
+        authDomain: "foodfinder-aaa97.firebaseapp.com",
+        projectId: "foodfinder-aaa97",
+        storageBucket: "foodfinder-aaa97.firebasestorage.app",
+        messagingSenderId: "138547142287",
+        appId: "1:138547142287:web:28203b846cd2b1abe65afa",
+        measurementId: "G-X2PSVD5KRK"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    document.getElementById("start-btn").addEventListener("click", () => {
+        getRestaurants(db);
+    });
+</script>
+<script type="module" src="index.js"></script>
+
+</body>
+</html>
