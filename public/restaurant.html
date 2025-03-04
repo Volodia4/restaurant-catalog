@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <button class="back-btn" onclick="window.history.back()">Назад до каталогу</button>
+</nav>
+
+<div id="restaurant-details" class="restaurant-details">
+    <div class="restaurant-header">
+        <h2 id="restaurant-name"></h2>
+        <p id="restaurant-rating"></p>
+    </div>
+
+    <div class="restaurant-info">
+        <div class="image-slider">
+            <button class="prev-btn" id="prev-btn">&#10094;</button>
+            <div class="images-container">
+                <img id="restaurant-image" src="" alt="Restaurant Image" class="restaurant-image">
+            </div>
+            <button class="next-btn" id="next-btn">&#10095;</button>
+        </div>
+
+        <div class="thumbnails">
+            <ul id="thumbnails-list"></ul>
+        </div>
+
+        <div class="restaurant-description">
+            <p id="restaurant-description"></p>
+            <p id="restaurant-cuisine"></p>
+            <p id="restaurant-city"></p>
+        </div>
+    </div>
+
+    <div id="restaurant-menu" class="restaurant-menu">
+        <h2 class="menu-header">Меню</h2>
+    </div>
+</div>
+
+<script src="restaurant.js"></script>
+</body>
+</html>
