@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: rgb(245, 245, 245);
+    color: rgb(85, 85, 85);
+}
+
+.navbar {
+    background-color: rgb(51, 51, 51);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: rgb(230, 126, 34);
+}
+
+.contacts-container {
+    max-width: 1200px;
+    margin: 120px auto 50px;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    animation: fadeIn 1s ease;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h1 {
+    font-size: 1.8rem;
+    color: rgb(51, 51, 51);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: rgb(119, 119, 119);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info ul {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: rgb(51, 51, 51);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 0.9rem;
+    color: rgb(51, 51, 51);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 0.8rem;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 12px;
+    font-size: 0.9rem;
+    background-color: rgb(230, 126, 34);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: rgb(207, 113, 31);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

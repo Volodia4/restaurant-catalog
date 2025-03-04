@@ -5,9 +5,19 @@
     font-family: 'Arial', sans-serif;
 }
 
-body {
-    background: url("images/MainBG.jpg") no-repeat center center fixed;
+html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("images/MainBG.jpg") no-repeat center center;
     background-size: cover;
+    z-index: -1;
+}
+
+body {
     min-height: 100vh;
     color: rgb(255, 255, 255);
     position: relative;
@@ -28,7 +38,7 @@ header {
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -45,7 +55,7 @@ header {
 .nav-links a {
     text-decoration: none;
     color: rgb(244, 194, 108);
-    font-size: 22px;
+    font-size: 1.1rem;
     padding: 10px 15px;
     transition: 0.3s;
 }
@@ -79,7 +89,7 @@ header {
 .dropdown-menu a {
     display: block;
     color: rgb(244, 194, 108);
-    font-size: 18px;
+    font-size: 0.9rem;
 }
 
 .dropdown-menu li:hover {
@@ -140,7 +150,7 @@ header, .hero {
     left: 0;
     width: 100%;
     background-color: rgb(90, 50, 20);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -194,16 +204,22 @@ header, .hero {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    transition: opacity 0.5s ease, transform 0.5s ease;
     gap: 50px;
     padding: 50px;
     margin-top: -680px;
     max-height: none;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 #restaurants-container.hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+#restaurants-container.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .restaurant-card {
@@ -232,16 +248,13 @@ header, .hero {
 
 .restaurant-info {
     padding: 20px;
-    background-color: rgb(255, 245, 219);
+    background-color: rgb(255, 240, 210);
     flex-grow: 1;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: color 0.3s ease;
-}
-
-.restaurant-info:hover {
-    background-color: rgb(255, 241, 204);
 }
 
 .restaurant-info h3 {
@@ -262,6 +275,225 @@ header, .hero {
 .restaurant-card:hover .restaurant-info h3,
 .restaurant-card:hover .restaurant-info p {
     color: rgb(97, 67, 18);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(245, 245, 245);
+}
+
+.navbar {
+    background-color: rgb(90, 50, 20);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: rgb(255, 180, 60);
+    border: none;
+    border-radius: 5px;
+    color: rgb(50, 30, 10);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: rgb(255, 160, 40);
+}
+
+.restaurant-details {
+    padding: 100px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: fadeIn 1s ease;
+}
+
+.restaurant-header {
+    text-align: center;
+}
+
+#restaurant-name {
+    font-size: 3rem;
+    color: rgb(240, 240, 240);
+}
+
+.image-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.images-container {
+    width: 70%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.restaurant-image {
+    width: 100%;
+    cursor: pointer;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn,
+.next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 120px;
+}
+
+.next-btn {
+    right: 120px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.thumbnails ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.thumbnails li {
+    width: 150px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.thumbnails li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.thumbnails li:hover img {
+    transform: scale(1.2);
+}
+
+.restaurant-description {
+    flex: 1;
+    background-color: rgb(255, 230, 190);
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.restaurant-description p {
+    margin: 10px 0;
+    color: rgb(90, 50, 20);
+    font-size: 1.5rem;
+}
+
+.restaurant-menu {
+    background-color: rgb(255, 240, 210);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.restaurant-menu div {
+    padding: 10px;
+    background-color: rgb(255, 230, 190);
+    border-radius: 5px;
+}
+
+.restaurant-menu div p {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.menu-header {
+    color: rgb(90, 50, 20);
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.dish {
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.dish-name {
+    font-weight: bold;
+    color: rgb(90, 50, 20);;
+}
+
+.dish-price {
+    right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(230, 126, 34);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .visible {

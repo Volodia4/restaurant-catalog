@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - FoodFinder</title>
+    <link rel="stylesheet" href="contactsStyle.css">
+</head>
+<body>
+<nav class="navbar">
+    <a href="index.html">Головна</a>
+    <a href="about.html">Про нас</a>
+    <a href="contacts.html" class="active">Контакти</a>
+    <a href="other.html">Інші посилання</a>
+</nav>
+
+<div class="contacts-container">
+    <div class="contact-info">
+        <h1>Зв'яжіться з нами</h1>
+        <p>Ми завжди раді допомогти! Напишіть нам або зателефонуйте, щоб дізнатися більше.</p>
+        <ul>
+            <li><strong>Телефон:</strong> +380 685 168 054</li>
+            <li><strong>Email:</strong> foodfinder@gmail.com</li>
+            <li><strong>Адреса:</strong> вул. Зарічанська, 10/4, Хмельницький, Україна</li>
+        </ul>
+    </div>
+    <div class="contact-form">
+        <h2>Форма зворотного зв’язку</h2>
+        <form id="contactForm" action="send.php" method="post">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
