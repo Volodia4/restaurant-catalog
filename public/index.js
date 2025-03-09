@@ -139,3 +139,31 @@ window.addEventListener("popstate", function(event) {
         showRestaurantsState(state.cuisine || "all", state.region || "all");
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function () {
+        if (navLinks.classList.contains("active")) {
+            navLinks.classList.remove("active");
+            setTimeout(() => {
+                navLinks.style.display = "none";
+            }, 300);
+        } else {
+            navLinks.style.display = "flex";
+            setTimeout(() => {
+                navLinks.classList.add("active");
+            }, 10);
+        }
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            setTimeout(() => {
+                navLinks.style.display = "none";
+            }, 300);
+        });
+    });
+});
