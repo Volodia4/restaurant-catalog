@@ -505,3 +505,132 @@ body {
     opacity: 0;
     pointer-events: none;
 }
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) and (hover: none) and (orientation: portrait) {
+    *:hover {
+        transition: none !important;
+        transform: none !important;
+    }
+    .menu-toggle {
+        display: flex;
+        color: white;
+        background-color: rgba(60, 40, 20, 0.95);
+        border: none;
+        font-size: 2rem;
+        margin-right: 20px;
+    }
+    header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .logo {
+        margin-left: 20px;
+    }
+    .text-filter {
+        display: none;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 40%;
+        background: rgba(60, 40, 20, 0.9);
+        position: absolute;
+        top: 82.5px;
+        right: 0;
+        left: auto;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 20px;
+        margin: 5px 0;
+        font-size: 1.2rem;
+        text-align: right;
+    }
+    #filter-panel {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: flex-start;
+    }
+    .filter, .btn {
+        width: 100%;
+        padding: 10px;
+    }
+    .filter:last-child, .btn:last-child {
+        margin-top: auto;
+    }
+    .filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+    }
+    #home-btn,
+    #cuisine-select {
+        flex: 0 0 48%;
+        margin: 0;
+    }
+    #regions-select {
+        flex: 0 0 100%;
+        margin-top: 5px;
+    }
+    #restaurants-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        margin-top: -705px;
+    }
+    .restaurant-img {
+        height: 100px;
+    }
+    .restaurant-info {
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .prev-btn {
+        left: 0;
+        font-size: 1rem;
+    }
+    .next-btn {
+        right: 0;
+        font-size: 1rem;
+    }
+    .thumbnails li {
+        width: 60px;
+        border-radius: 5px;
+    }
+    .back-btn {
+        width: 100%;
+    }
+}
+
+@media (hover: none) and (orientation: landscape) {
+    *:hover {
+        transition: none !important;
+        transform: none !important;
+    }
+    #restaurants-container {
+        margin-top: -320px;
+    }
+    .prev-btn {
+        left: 60px;
+    }
+    .next-btn {
+        right: 60px;
+    }
+    .thumbnails li {
+        width: 120px;
+    }
+}
