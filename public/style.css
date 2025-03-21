@@ -518,7 +518,8 @@ body {
         transform: none !important;
     }
     .menu-toggle {
-        display: flex;
+        display: block;
+        float: right;
         color: white;
         background-color: rgba(60, 40, 20, 0.95);
         border: none;
@@ -530,6 +531,7 @@ body {
         padding-right: 0;
     }
     .logo {
+        float: left;
         margin-left: 20px;
     }
     .text-filter {
@@ -541,7 +543,7 @@ body {
         width: 40%;
         background: rgba(60, 40, 20, 0.9);
         position: absolute;
-        top: 82.5px;
+        top: 82px;
         right: 0;
         left: auto;
         padding: 20px 0;

@@ -59,7 +59,7 @@ window.onload = () => {
             if (Array.isArray(dishValue) && dishValue.length >= 2) {
                 const dishElement = document.createElement("div");
                 dishElement.classList.add("dish");
-                dishElement.innerHTML = `<span class="dish-name">${dishValue[0]}</span> <span class="dish-price">$${dishValue[1]}</span>`;
+                dishElement.innerHTML = `<span class="dish-name">${dishValue[0]}</span> <span class="dish-price">${dishValue[1]} грн</span>`;
                 menuContainer.appendChild(dishElement);
             }
         });
