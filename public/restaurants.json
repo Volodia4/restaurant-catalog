@@ -1,0 +1,145 @@
+[
+  {
+    "name": "Фамілія",
+    "description": "Сучасний ресторан з авторським меню та шикарним інтер’єром",
+    "images": ["images/Familia0.jpg", "images/Familia1.jpg", "images/Familia2.jpg",
+      "images/Familia3.jpg", "images/Familia4.jpg"],
+    "cuisine": "Авторська",
+    "city": "Хмельницький",
+    "rating": 4.8,
+    "menu": {
+      "dish_1": [
+        "Хумус з авокадо",
+        325
+      ],
+      "dish_2": [
+        "Салат з буряком",
+        125
+      ],
+      "dish_3": [
+        "Салат з телятиною",
+        220
+      ]
+    }
+  },
+
+  {
+    "name": "Sobkoff",
+    "description": "Вишукані страви у комплексі з готелем і спа",
+    "images": ["images/Sobkoff0.jpg", "images/Sobkoff1.jpg", "images/Sobkoff2.jpg",
+      "images/Sobkoff3.jpg", "images/Sobkoff4.jpg"],
+    "cuisine": "Українська",
+    "city": "Хмельницький",
+    "rating": 4.9,
+    "menu": {
+      "dish_1": [
+        "Паста",
+        120
+      ],
+      "dish_2": [
+        "Салат",
+        70
+      ]
+    }
+  },
+
+  {
+    "name": "Панський маєток",
+    "description": "Традиційна українська кухня у старовинному стилі",
+    "images": ["images/PanskijMajetok0.jpg", "images/PanskijMajetok1.jpg", "images/PanskijMajetok2.jpg",
+      "images/PanskijMajetok3.jpg", "images/PanskijMajetok4.jpg"],
+    "cuisine": "Українська",
+    "city": "Хмельницький",
+    "rating": 4.8,
+    "menu": {
+      "dish_1": [
+        "Паста",
+        120
+      ],
+      "dish_2": [
+        "Салат",
+        70
+      ]
+    }
+  },
+
+  {
+    "name": "Сад",
+    "description": "Панорамний вид і затишна атмосфера для вечерь і свят",
+    "images": ["images/Sad0.jpg", "images/Sad1.jpg", "images/Sad2.jpg",
+      "images/Sad3.jpg", "images/Sad4.jpg"],
+    "cuisine": "Європейська",
+    "city": "Хмельницький",
+    "rating": 4.7,
+    "menu": {
+      "dish_1": [
+        "Паста",
+        120
+      ],
+      "dish_2": [
+        "Салат",
+        70
+      ]
+    }
+  },
+
+  {
+    "name": "Венеція",
+    "description": "Італійські страви, відмінна піца та паста",
+    "images": ["images/Venetsia0.jpg", "images/Venetsia1.jpg", "images/Venetsia2.jpg",
+      "images/Venetsia3.jpg", "images/Venetsia4.jpg"],
+    "cuisine": "Італійська",
+    "city": "Хмельницький",
+    "rating": 4.8,
+    "menu": {
+      "dish_1": [
+        "Паста",
+        120
+      ],
+      "dish_2": [
+        "Салат",
+        70
+      ]
+    }
+  },
+
+  {
+    "name": "Арарат",
+    "description": "Традиційні вірменські страви та шашлики в затишному інтер’єрі",
+    "images": ["images/Ararat0.jpg", "images/Ararat1.jpg", "images/Ararat2.jpg",
+      "images/Ararat3.jpg", "images/Ararat4.jpg"],
+    "cuisine": "Вірменська",
+    "city": "Хмельницький",
+    "rating": 5,
+    "menu": {
+      "dish_1": [
+        "Паста",
+        120
+      ],
+      "dish_2": [
+        "Салат",
+        70
+      ]
+    }
+  },
+
+  {
+    "name": "Проскурівська Броварня",
+    "description": "Крафтове пиво та традиційні пивні закуски",
+    "images": ["images/ProskurBrovar0.jpg", "images/ProskurBrovar1.jpg", "images/ProskurBrovar2.jpg",
+      "images/ProskurBrovar3.jpg", "images/ProskurBrovar4.jpg"],
+    "cuisine": "Паб",
+    "city": "Хмельницький",
+    "rating": 4.3,
+    "menu": {
+      "dish_1": [
+        "Паста",
+        120
+      ],
+      "dish_2": [
+        "Салат",
+        70
+      ]
+    }
+  }
+]
